@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         val mitexto = findViewById<EditText>(R.id.etTexto)
         val resultTexto = findViewById<TextView>(R.id.tvResultado)
+
         //Asocio un escuchador a ese editText a traves de
         // la función de extensión definida en Extensiones.kt
         mitexto.despues_cambio_texto {
@@ -32,12 +33,10 @@ class MainActivity : AppCompatActivity() {
                 else {
                     if (texto.length == 1) {
                         textoAnterior = ""
-                        resultTexto.text = textoAnterior
                     } else {
-                        textoAnterior = resultTexto.text.substring(0,resultTexto.length() - 1)
-                        resultTexto.text = textoAnterior
-
+                        textoAnterior = resultTexto.text.substring(0, resultTexto.length() - 1)
                     }
+                    resultTexto.text = textoAnterior
                 }
             }
 
