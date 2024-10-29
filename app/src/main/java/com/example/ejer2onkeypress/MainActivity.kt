@@ -30,12 +30,14 @@ class MainActivity : AppCompatActivity() {
                 if (textoAnterior.length < texto.length)
                     resultTexto.text = textoAnterior + "_"
                 else {
-                    if (texto.length == 0) {
+                    if (texto.length == 1) {
                         textoAnterior = ""
+                        resultTexto.text = textoAnterior
                     } else {
-                        textoAnterior = resultTexto.text.substring(resultTexto.length() - 1)
+                        textoAnterior = resultTexto.text.substring(0,resultTexto.length() - 1)
+                        resultTexto.text = textoAnterior
+
                     }
-                    resultTexto.text = textoAnterior
                 }
             }
 
